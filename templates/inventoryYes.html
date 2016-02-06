@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <div class="row">
+    <span class="red"><p><em>Don't forget to delete books from your inventory once you sell them.</em></p><span>
+  </div>
+
+  <div class="row">
+    <div class="panel panel-warning login col-md-9">
+      <h2 class="panel-heading">My Inventory
+      <div class="right special">
+        <a href="{{url_for('newBook')}}">Post a new book</a>
+      </div></h2>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th></th>
+              <th></th>
+              <th>Course</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in items %}
+              <tr>
+                <td>{{i.name}}</td>
+                <td><a href="{{url_for('editBook', book_id = i.id)}}">Edit</a></td>
+                <td><a href="{{url_for('deleteBook', book_id = i.id)}}">Delete</a></td>
+                <td>{{i.course}}</td>
+                <td>${{i.price}}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel panel-info login col-md-3">
+      <h2 class="panel-heading">Find a book<h2>
+      <div class="panel-body">
+        <form action = "{{url_for('enquiry')}}" method = 'POST'>
+          <div class="form-group">
+            <label for="courseNum">Search by Course Number</label>
+            <div class="padding"><p>Course number should have 3 letters, followed by a dash, then 3 numbers.</p></div>
+            <input type="text" class="form-control" name="courseNum" placeholder="XXX-###">
+          </div>
+          <button type="submit" class="btn btn-default">Search</button>
+        </form>
+      </div>
+    </div>
+  </div> <!-- /row -->
+
+{% endblock%}

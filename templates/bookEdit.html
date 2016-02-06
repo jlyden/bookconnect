@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class = "row">
+</div>
+
+<div class = "row">
+
+  <div class="panel panel-info login col-md-9">
+    <h2 class="panel-heading">Enter only the data that is changing<h2>
+    <div class="panel-body">
+      <form action = "{{url_for('editBook', book_id=book_id)}}" method = 'POST'>
+        <fieldset class="form-group">
+          <label for="bookName">Title of Book</label>
+          <input type="text" class="form-control" name="bookName" placeholder="{{book.name}}" size = '80'>
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="bookISBN">10-digit ISBN (no dashes)</label>
+          <input type="text" class="form-control" name="bookISBN" placeholder="{{book.ISBN}}" size = '20'>
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="course">Course Number</label>
+          <input type="text" class="form-control" name="course" placeholder="{{book.course}}" size = '7'>
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="bookPrice">Price</label>
+          <input type="text" class="form-control" name="bookPrice" placeholder="{{book.price}}" size = '6'>
+        </fieldset>
+        <input type="submit" class="btn btn-default" value = "Change">
+        <a class="btn btn-default" onclick="goBack()">Cancel</a>
+      </form>
+    </div>
+  </div>
+
+  <!-- spacer -->
+  <div class="col-md-3"></div>
+
+</div> <!-- /row -->
+
+{% endblock%}

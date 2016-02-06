@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row well well-sm">
+  <h2>Looking for a book? Click <a class="special red" href="{{url_for('enquiry')}}">Search</a>. ~
+      Want to sell a book? Click <a class="special red" href="{{url_for('newBook')}}">Post</a>.</h2>
+</div>
+
+<div class="row">
+
+<div class="panel panel-warning login col-md-9">
+  <h2 class="panel-heading">Books Posted Recently<h2>
+  <div class="panel-body">
+    <h2>No recent books posted.</h2>
+    <h2><a href="{{url_for('newBook')}}">Want to post one?</a></h2>
+  </div>
+</div>
+
+<div class="panel panel-info login col-md-3">
+  <h2 class="panel-heading">Find a book<h2>
+  <div class="panel-body">
+    <form action = "{{url_for('enquiry')}}" method = 'POST'>
+      <div class="form-group">
+        <label for="courseNum">Search by Course Number</label>
+        <div class="padding"><p>Course number should have 3 letters, followed by a dash, then 3 numbers.</p></div>
+        <input type="text" class="form-control" name="courseNum" placeholder="XXX-###">
+      </div>
+      <button type="submit" class="btn btn-default">Search</button>
+    </form>
+  </div>
+</div>
+
+</div> <!-- /row -->
+
+{% endblock%}

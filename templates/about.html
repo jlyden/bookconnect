@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="panel panel-info col-md-9">
+  <h2 class="panel-heading">About BookConnect<h2>
+  <div class="panel-body">
+    <p><strong>Book Connect facilitates connections between private book sellers and interested buyers
+      who live, learn or work nearby.</strong></p>
+
+    <h2 class="red">A Local Alternative</h2>
+      <p>BookConnect provides a convenient alternative to websites like half.com or textbook.com -
+         no need to go to the post office to mail a book or provide credit card information online.</p>
+      <p>BookConnect also frees sellers from the tyranny of school bookstores, which buy low
+         and sell high. YOU set the price, and avoid the middleman.</p>
+
+    <h2 class="red">Have a book?</h2>
+      <p>Complete a simple 4-item form to list your textbook on this website.</p>
+      <p>When an interested customer selects your book, BookConnect will send you an email
+         providing you with the buyer's email address. You then contact the buyer directly
+         to establish a meeting place to swap book and payment.</p>
+
+    <h2 class="red">Need a book?</h2>
+      <p>Search our database for the book you need. Confirm your interest and BookConnect will
+         send an e-mail to the book seller, who will contact you directly with a meeting place
+         to swap book and payment.</p>
+
+    <h2 class="red">Credits</h2>
+      <p>Created by jennifer lyden from New York City as a final project for CS50 at Harvard University. Code soon to be available at GitHub - search <a href="https://github.com/jlyden" target="_blank">jlyden</a>.</p>
+  </div>
+</div>
+
+<div class="panel panel-info col-md-9">
+  <h2 class="panel-heading">Contact Us<h2>
+  <div class="panel-body">
+    <div class="padding"><p>Do you have questions or concerns?
+        BookConnect is eager to hear from you!</p></div>
+    <form id ="contact" action = "{{url_for('about')}}" method = 'POST'>
+      <fieldset class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Your Name" size = '60' required>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" name="email" placeholder="someone@mail_provider.com" size = '60' required>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="comments">Comments</label>
+        <textarea class="form-control" name="comments" placeholder="Comments" cols = '60' rows = '8' required></textarea>
+      </fieldset>
+      <input type="submit" class="btn btn-default" value = "Post">
+      <a class="btn btn-default" onclick="goBack()">Cancel</a>
+  </div>
+</div>
+
+{% endblock%}

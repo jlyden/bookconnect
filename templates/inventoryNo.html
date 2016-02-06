@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="panel panel-warning login col-md-9">
+      <h2 class="panel-heading">My Inventory<h2>
+      <div class="panel-body">
+        <h2>You haven't posted any books yet.</h2>
+        <h2><a href="{{url_for('newBook')}}">Want to now?</a></h2>
+      </div>
+    </div>
+
+    <div class="panel panel-info login col-md-3">
+      <h2 class="panel-heading">Find a book<h2>
+      <div class="panel-body">
+        <form action = "{{url_for('enquiry')}}" method = 'POST'>
+          <div class="form-group">
+            <label for="courseNum">Search by Course Number</label>
+            <div class="padding"><p>Course number should have 3 letters, followed by a dash, then 3 numbers.</p></div>
+            <input type="text" class="form-control" name="courseNum" placeholder="XXX-###">
+          </div>
+          <button type="submit" class="btn btn-default">Search</button>
+        </form>
+      </div>
+    </div>
+
+{% endblock%}

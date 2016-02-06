@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <!-- spacer -->
+  <div class="col-md-4"></div>
+
+  <div class="panel panel-info login col-md-4">
+    <h2 class="panel-heading">Find a book<h2>
+    <div class="panel-body">
+      <form id = "search" action = "{{url_for('enquiry')}}" method = 'POST'>
+        <div class="form-group">
+          <div class="padding"><p>Course number should have 3 letters, followed by a dash, then 3 numbers.</p></div>
+          <label for="courseNum">Search by Course Number</label>
+          <input type="text" class="form-control" name="courseNum" placeholder="XXX-###">
+        </div>
+        <button type="submit" class="btn btn-default">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- spacer -->
+  <div class="col-md-4"></div>
+
+{% endblock%}

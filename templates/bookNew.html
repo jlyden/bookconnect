@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="panel panel-info login col-md-9">
+  <h2 class="panel-heading">Post your book - All inputs required<h2>
+  <div class="panel-body">
+    <form id ="newBook" action = "{{url_for('newBook')}}" method = 'POST'>
+      <fieldset class="form-group">
+        <label for="bookName">Title of Book</label>
+        <input type="text" class="form-control" name="bookName" placeholder="Title" size = '80' required>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="bookISBN">10-digit ISBN (no dashes)</label>
+         <p>Need to find the ISBN?
+         <a href="https://www.youtube.com/watch?v=fl6DxAwzOt4" target="_blank">Find it</a> on the book or
+        <a href="http://www.lookupbyisbn.com/" target="_blank">look it up</a> online.</p>
+        <input type="text" class="form-control" name="bookISBN" placeholder="##########" size = '20' required>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="course">Course Number - 3 letters, a dash, and 3 numbers</label>
+        <input type="text" class="form-control" name="course" placeholder="XXX-###" size = '7' required>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="bookPrice">Price</label>
+        <input type="text" class="form-control" name="bookPrice" placeholder="20.00" size = '6' required>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="reminders">Reminders to Sellers</label>
+        <ul class = "padding">
+          <li>Click <span class="special">Inventory</span> to see all the books you have posted.</li>
+          <li>You can <span class="red">Edit</span> books in your <span class="special">Inventory</span>, changing their prices, titles, etc.
+          <li>Please respond to e-mails from interested buyers within 24 hours.</li>
+          <li>Please remember to <span class="red">Delete</span> books from your <span class="special">Inventory</span></li> once you have sold them.
+        </ul>
+      </fieldset>
+      <input type="submit" class="btn btn-default" value = "Post">
+      <a class="btn btn-default" onclick="goBack()">Cancel</a>
+    </form>
+    <script type="text/javascript">
+     var frmvalidator  = new Validator("newBook");
+     frmvalidator.addValidation("bookISBN","maxlen=10","ISBN should be 10 digits.");
+     frmvalidator.addValidation("bookISBN","minlen=7","ISBN should be 10 digits.");
+     frmvalidator.addValidation("bookISBN","num","ISBN cannot contain letters or symbols.");
+
+     frmvalidator.addValidation("course","maxlen=7","Course number should be 3 letters, a dash, then 3 numbers.");
+     frmvalidator.addValidation("course","minlen=7","Course number should be 3 letters, a dash, then 3 numbers.");
+    </script>
+  </div>
+</div>
+
+<!-- spacer -->
+<div class="col-md-3"></div>
+
+
+{% endblock%}

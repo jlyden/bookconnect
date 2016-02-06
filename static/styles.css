@@ -1,0 +1,35 @@
+body { font-family: 'Share', sans-serif; padding-top: 60px; }
+
+h1, h2, h3, h4 { font-family: 'Share', sans-serif; color: #777; }
+h1 { font-size: 150%; padding-bottom: 10px; }
+h2 { font-size: 125%; }
+
+/* th { font-size: 110%; }
+.login { font-size: 85%; padding-bottom: 25px; }
+td { font-size: 100%; } */
+
+hr { width: 80%; margin-left: auto; margin-right: auto; }
+
+a { color:#0000FF; }
+
+a.title { font-family: 'Lobster', cursive; font-size: 150%; color:#777;}
+.navbar-brand { font-family: 'Lobster', cursive; font-size: 200%; }
+
+h1.red { color: red; }
+h2.red { color: red; }
+
+ul.padding { padding-top: 5px; padding-bottom: 5px; }
+
+.panel-heading { font-weight: bold; }
+.blue { color: #bce8f1; }
+.red { color: red; }
+.smaller { font-size: 60%; }
+.indent { padding-left: 15px; }
+.padding { padding-top: 10px; padding-bottom: 10px; }
+.right { text-align: right; float: right; }
+.center { text-align: center; }
+.bcenter { display: table; margin: 0 auto; }
+.special { font-family: 'Lobster', cursive; }
+.flash { color: #FF0000; text-align: center; font-size: medium; }
+
+#bottom { color: #000000; font-size: small; text-align: center; margin-top: 30px; }

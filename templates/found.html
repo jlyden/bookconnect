@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="panel panel-info col-md-9">
+  <h2 class="panel-heading">Want this book?<h2>
+  <div class="panel-body">
+    <p>BookConnect strongly recommends that you double check the ISBN and course number, to make sure this is the right book for your class. If you enter the ISBN at <a href="http://www.lookupbyisbn.com/" target="_blank">this website</a>, you can see additional information about the book, including author(s) and front cover.</p>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>ISBN</th>
+          <th>Course</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td><i>{{book.name}}</i></td>
+            <td>{{book.ISBN}}</td>
+            <td>{{book.course}}</td>
+            <td>${{book.price}}</td>
+          </tr>
+      </tbody>
+    </table>
+
+    <div class="padding red"><p>If you click "Yes," BookConnect will send a message to the book owner confirming your interest.</p></div>
+
+    <form action = "{{url_for('connect', book_id=book_id)}}" method = 'POST'>
+    <input type="submit" class="btn btn-default" value = "Yes!">
+    <a class="btn btn-default" onclick="goBack()">Cancel</a>
+  </div>
+</div>
+
+    <!-- spacer -->
+    <div class="col-md-3">
+    </div>
+
+{% endblock%}
