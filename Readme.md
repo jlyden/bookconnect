@@ -1,8 +1,9 @@
 # Project: Book Connect  - jennifer lyden
 
 ## Synopsis
-Book Connect is a social media web app which facilitates connections between private book sellers and interested buyers, who subsequently meet locally (face-to-face) to exchange book and payment.
-Program sets up database of Users and Books, and includes a python module to run the app.
+- Book Connect is a social media web app which facilitates connections between private book sellers and interested buyers, who subsequently meet locally (face-to-face) to exchange book and payment.
+- Program sets up database of Users and Books, and includes a python module to run the app.
+- Developed from scratch
 
 ## Required Libraries and Dependencies
 * You will need Python v2 or higher, SQLAlchemy, Flask, Flask-Mail, and Oauth2client to run this project.
